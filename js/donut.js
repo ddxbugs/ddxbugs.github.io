@@ -1,3 +1,7 @@
+/*
+donut.js
+virtual 3d spinning ascii donut  
+*/
 window.onload = () => {
     try {
         loop()
