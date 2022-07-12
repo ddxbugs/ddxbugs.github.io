@@ -40,18 +40,22 @@ const chars = ".,-!:;=!*#$@"    // spinning donut char sprites
 var x_start, y_start = 0
 var A, B = 0 // lagrange values animate donut spin
 
+// TODO: fix bug screen = display.set_mode(WIDTH, HEIGHT)
+// TODO; fix bug display_surface = display.set_mode(WIDTH, HEIGHT)
 // canvas.style.height = HEIGHT
 // canvas.style.width = WIDTH
 
-// var donut = new Donut()
-
+// TODO: fix bug 'font.render(str(letter), True, white)
+// TODO: fix bug 'display_surface.blit(text, (x_start, y_start))
 function textDisplay(letter, x_start, y_start) {
     var text;
 
 }
 
 function loop() {
+    // screen.fill(black)
 
+    // TODO: bug fix setTimeout(show()=>({//update}))
     // setInterval(show, 1000/15) TODO: Debug and fix
 
     // spinning donut code goes here
@@ -60,7 +64,7 @@ function loop() {
     b = new Array(screen_size).fill(' ', 0, screen_size) // background fills empty space
 
     for (var i = 0; i < TWOPI; i+= theta_spacing) {
-        for(var j = 0; J < TWOPI; j+= phi_spacing) {
+        for(var j = 0; j < TWOPI; j+= phi_spacing) {
             c = math.sin(i)
             d = math.cos(j)
             e = math.sin(A)
@@ -86,6 +90,7 @@ function loop() {
     if (y_start == rows * y_separator - y_separator) {
         y_start = 0
     }
+    // render b luminance index
     for (var k = 0; k < b.length; k++) {
         A += 0.000005
         B += 0.000005
@@ -99,6 +104,8 @@ function loop() {
             x_start += x_separator
         }
     }
+
+    // TODO: implement update canvas display
     // update()
 }
 
