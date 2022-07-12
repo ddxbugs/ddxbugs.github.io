@@ -1,6 +1,15 @@
 window.onload = () => {
-    loop()
+    try {
+        loop()
+    } catch (err) {
+        document.write(err)
+    }
 }
+
+window.addEventListener("keydown", (event) => {
+    // quit
+    return
+})
 
 class Donut{
     constructor() {
@@ -34,9 +43,7 @@ var A, B = 0 // lagrange values animate donut spin
 // canvas.style.height = HEIGHT
 // canvas.style.width = WIDTH
 
-var donut = new Donut()
-
-
+// var donut = new Donut()
 
 function textDisplay(letter, x_start, y_start) {
     var text;
@@ -45,17 +52,54 @@ function textDisplay(letter, x_start, y_start) {
 
 function loop() {
 
-    setInterval(show, 1000,15)
+    // setInterval(show, 1000/15) TODO: Debug and fix
+
     // spinning donut code goes here
     var b, c, d, e, f, g, h, D, l, m, n, t, x, z, y, o, N; 
-    z = [0] * screen_size   // donut fills donut space
-    b = [' '] * screen_size // background fills empty space
-    
-    for (int i = 0; i < TWOPI; i+= theta_spacing) {
-        for(int j = 0; J < TWOPI; j+= phi_spacing) {
+    z = new Array(screen_size).fill(' ', 0, screen_size) // donut fills donut space
+    b = new Array(screen_size).fill(' ', 0, screen_size) // background fills empty space
 
+    for (var i = 0; i < TWOPI; i+= theta_spacing) {
+        for(var j = 0; J < TWOPI; j+= phi_spacing) {
+            c = math.sin(i)
+            d = math.cos(j)
+            e = math.sin(A)
+            f = math.cos(j)
+            g = math.cos(A)
+            h = d + 2
+            D = 1 / (c * h * e + f * g + 5)
+            l = math.cos(i)
+            m = math.cos(B)
+            n = math.sin(B)
+            t = c * h * g - f * e
+            x = (x_offset + 40 * D * (l * h * m - t * n))
+            y = (y_offset + 20 * D * (l * h * n + t * m))
+            o = (x + cols * y) // z = x + Ay coord after rotation
+            N = (8 * (f * e - c * d * g) * m - c * d * e - f * g - l * d * n)
+
+            if (rows > y && y > 0 && cols > x && x > 0 && D > z[o]) {
+                z[o] = D
+                b[o] = chars[N > 0 ? N : 0]
+            }
         }
     }
+    if (y_start == rows * y_separator - y_separator) {
+        y_start = 0
+    }
+    for (var k = 0; k < b.length; k++) {
+        A += 0.000005
+        B += 0.000005
+        if (k == 0 || k % cols) {
+            textDisplay(b[k], x_start, y_start)
+            x_start += x_separator
+        } else {
+            y_start += y_separator
+            x_start = 0
+            textDisplay(b[k], x_start, y_start)
+            x_start += x_separator
+        }
+    }
+    // update()
 }
 
 function show(){
