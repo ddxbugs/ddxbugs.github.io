@@ -2,4 +2,24 @@ body {
     background-color: black;
 }
 
+nav {
+    animation-duration: 4s;
+    animation-name: autohide;
+}
+
+a img {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+@keyframes autohide {
+    from {
+        opacity: 0;
+    }
+    to {
+
+    }
+}
 
