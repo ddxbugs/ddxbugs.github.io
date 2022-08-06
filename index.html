@@ -15,11 +15,11 @@
     <script src="js/jquery.backgroundPosition.js" type="text/javascript"></script>
     <script type="text/javascript">
       window.onload = function() {
-        $("nav").mouseenter(function(e) {
+        $("nav").mouseenter(
           // $("#foreground").hide();
           console.log(e);
-          $("nav").css("blur", "0px")
-        });
+          $("nav").filter("blur", "0px");
+        };
         
         animate();
       }
@@ -63,7 +63,7 @@
             <a class="nav-link" href="https://github.com/ddxbugs">github<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://linkedin.com/in/jjosf">linkedin</Link></a>
+            <a class="nav-link" href="https://ddxbugs.hashnode.dev/">hashnode</Link></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more</a>
@@ -72,7 +72,7 @@
               <a class="dropdown-item" href="#">contact</a>
               <a class="dropdown-item" href="#">about</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://ddxbugs.hashnode.dev/">hashnode.dev</a>
+              <a class="dropdown-item" href="">r/dev</a>
             </div>
           </li>
           <li class="nav-item">
