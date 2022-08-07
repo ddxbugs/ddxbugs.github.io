@@ -159,8 +159,8 @@ a img {
     border-bottom-right-radius: 100%;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
-	filter:opacity(90%);
 	height: 50px;
+	filter:opacity(70%);
 }
 
 @keyframes autohide {
@@ -172,7 +172,7 @@ a img {
     to {
 		opacity: 100%;
 		filter: blur(0px);
-		height: 65px;
+		height: 75px;
     }
 }
 
