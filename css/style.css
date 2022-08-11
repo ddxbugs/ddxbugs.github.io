@@ -161,7 +161,7 @@ a img {
     border-top-right-radius: 100%;
 	height: 50px;
 	filter:opacity(70%);
-}
+} 
 
 @keyframes autohide {
     from {
