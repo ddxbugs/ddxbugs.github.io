@@ -1,0 +1,12 @@
+<div class="contact">
+    <h2>Contact</h2>
+    <ul>
+        <li>Southern Methodist University</li>
+        <li>Dedman College of Humanities and Science</li>
+        <li>3225 University Blvd, Dallas, Texas 75205</li>
+        <li><span class="li-icon">{% include svg/pin-alt.svg %}</span><span>{{ site.address }}</span></li>
+        <li><span class="li-icon">{% include svg/phone.svg %}</span><span>{{ site.phone }}</span></li>
+        <li><span class="li-icon">{% include svg/mail.svg %}</span><a href="mailto:{{ site.author.email }}">{{ site.email }}</a></li>
+        <li><span class="li-icon">{% include svg/internet.svg %}</span><a href="{{ site.url }}">{{ site.url }}</a></li>
+    </ul>
+</div>
