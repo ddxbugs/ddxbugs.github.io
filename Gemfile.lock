@@ -112,6 +112,7 @@ GEM
 PLATFORMS
   java
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   cvless (~> 2.2)
