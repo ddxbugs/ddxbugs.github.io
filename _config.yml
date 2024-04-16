@@ -21,9 +21,9 @@
 title: ddxbugs
 email: ddxbugs@proton.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Hello, my name's [your name]. I'm a .
+  Hello, my name's [your name].
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "ddxbugs.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: github.com/ddxbugs # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ddxbugs
 github_username:  ddxbugs
 
