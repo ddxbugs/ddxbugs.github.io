@@ -7,5 +7,5 @@ categories: jekyll update
 [Report (PDF)]({{ site.url }}/assets/files/report.pdf)
 {% highlight ruby %}
 # Python
-print("All models are wrong, some are useful");
+print("All models are wrong, some are useful")
 {% endhighlight %}
